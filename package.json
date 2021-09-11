@@ -1,5 +1,5 @@
 {
-  "name": "beanstalkd-workers",
+  "name": "@bruno-buiret/beanstalkd-workers",
   "version": "1.0.0",
   "description": "NodeJS workers for beanstalkd.",
   "keywords": [
@@ -7,7 +7,6 @@
     "nodejs",
     "worker"
   ],
-  "main": "index.js",
   "repository": "https://github.com/bruno-buiret/beanstalkd-workers",
   "author": {
     "name": "Bruno Buiret",
@@ -30,5 +29,8 @@
     "eslint": "eslint src/**/*.js",
     "watch": "esw --watch src/**/*.js",
     "test": "mocha"
+  },
+  "publishConfig": {
+    "@bruno-buiret:registry": "https://npm.pkg.github.com"
   }
 }
