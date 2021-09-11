@@ -1,0 +1,34 @@
+{
+  "name": "beanstalkd-workers",
+  "version": "1.0.0",
+  "description": "NodeJS workers for beanstalkd.",
+  "keywords": [
+    "beanstalkd",
+    "nodejs",
+    "worker"
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/bruno-buiret/beanstalkd-workers",
+  "author": {
+    "name": "Bruno Buiret",
+    "email": "bruno.buiret@gmail.com"
+  },
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "jackd": "^1.2.6",
+    "jsonschema": "^1.4.0"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "eslint": "^7.32.0",
+    "eslint-watch": "^7.0.0",
+    "mocha": "*",
+    "test-console": "^2.0.0"
+  },
+  "scripts": {
+    "eslint": "eslint src/**/*.js",
+    "watch": "esw --watch src/**/*.js",
+    "test": "mocha"
+  }
+}
