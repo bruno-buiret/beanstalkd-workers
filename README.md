@@ -6,6 +6,8 @@ but promises are used and multiple workers can be used of only strictly one.
 
 A handler processes jobs which a worker gives them, themselves handled by a runner.
 
+![Hierarchy](doc/runner-workers-handlers.png)
+
 How to write handlers
 ---------------------
 
