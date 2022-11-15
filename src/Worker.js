@@ -1,6 +1,7 @@
 const EventEmitter = require('events');
 const Jackd = require('jackd');
 const Validator = require('jsonschema').Validator;
+const WorkerActions = require('./WorkerActions');
 
 /**
  * A worker.
@@ -207,7 +208,7 @@ class Worker extends EventEmitter {
                 }
                 else {
                     this.emit('job.invalid', id, result.errors);
-                    action = 'bury';
+                    action = WorkerActions.BURY;
                 }
             }
 
@@ -218,13 +219,13 @@ class Worker extends EventEmitter {
                 this.emit('job.handled', id);
             }
 
-            // Handle job post processing
+            // Handle job post-processing
             let options = undefined;
 
             if(Array.isArray(action)) {
                 switch(action.length) {
                     case 0:
-                        action = 'bury';
+                        action = WorkerActions.BURY;
                         break;
 
                     case 1:
@@ -238,13 +239,13 @@ class Worker extends EventEmitter {
             }
 
             switch(action) {
-                case 'delete':
+                case WorkerActions.DELETE:
                     this.emit('job.deleting', id);
                     await this.client.delete(id);
                     this.emit('job.deleted', id);
                     break;
 
-                case 'release':
+                case WorkerActions.RELEASE:
                     this.emit('job.releasing', id);
                     await this.client.release(id, options);
                     this.emit('job.released', id);

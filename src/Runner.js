@@ -12,7 +12,7 @@ class Runner extends EventEmitter {
     /**
      * Initializes a runner.
      *
-     * @param {Object} configuration
+     * @param {Object} configuration The runner's configuration.
      * @param {Logger} logger A logger.
      */
     constructor(configuration, logger) {

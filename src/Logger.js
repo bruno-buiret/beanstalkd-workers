@@ -43,7 +43,8 @@ class Logger {
     constructor(level) {
         // Initialize properties
         this.level = level;
-        this.formatter = new Intl.DateTimeFormat(undefined, {
+        this.formatter = new Intl.DateTimeFormat('en-GB', {
+            hour12: false,
             year: 'numeric', month: '2-digit', day: '2-digit',
             hour: '2-digit', minute: '2-digit', second: '2-digit'
         });
@@ -61,10 +62,11 @@ class Logger {
             return;
         }
 
-        context.unshift(message);
-        context.unshift('[' + this.formatter.format(new Date()) + '][' + LEVEL_NAMES[level] + ']');
-
-        console[LEVEL_METHODS[level]].apply(console, context);
+        console[LEVEL_METHODS[level]](
+            '[' + this.formatter.format(new Date()) + '][' + LEVEL_NAMES[level] + ']',
+            message,
+            ...context
+        );
     }
 
     /**
