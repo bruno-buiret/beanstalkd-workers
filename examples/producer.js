@@ -16,19 +16,18 @@ producer
     .connect({host: '127.0.0.1', port: 11300})
     .then(async() => {
         const isbns = ['0007375069', '9780007375066', '9791028101510', '9791028107789'];
+        const durations = [1000, 2000, 3000, 4000, 5000];
         const tubes = ['test_1', 'test_2', 'test_3'];
 
-        await producer.use(tubes.random());
-
         do {
-
+            await producer.use(tubes.random());
             const id = await producer.put({
                 type: 'book',
                 payload: {
                     isbn: isbns.random()
                 }
             });
-            await wait(1000);
+            await wait(durations.random());
         }
         while(true);
     })

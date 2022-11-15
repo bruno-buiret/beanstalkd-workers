@@ -20,8 +20,6 @@ class NoopHandler extends AbstractHandler {
             null,
             logger
         );
-
-        console.log('configuration', configuration);
     }
 
     /**
