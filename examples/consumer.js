@@ -1,7 +1,7 @@
 const Runner = require('../src/Runner');
 const {Logger, LOG_LEVELS} = require('../src/Logger');
 
-process.on('SIGTERM', (event) => {
+process.on('SIGTERM', () => {
     runner
         .stop()
         .then(() => process.exit(0))

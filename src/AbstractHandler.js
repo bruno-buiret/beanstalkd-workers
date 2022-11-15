@@ -1,5 +1,6 @@
 const Validator = require('jsonschema').Validator;
 const ValidationError = require('./ValidationError');
+const WorkerActions = require('./WorkerActions');
 
 /**
  * A base class for handlers.
@@ -62,7 +63,7 @@ class AbstractHandler {
      * @return {Promise<String|[String, Object],*>} The post handling action.
      */
     process(payload, id, type) { // eslint-disable-line no-unused-vars
-        return Promise.resolve('bury');
+        return Promise.resolve(WorkerActions.BURY);
     }
 }
 

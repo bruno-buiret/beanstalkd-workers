@@ -15,19 +15,19 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "jackd": "^1.2.6",
-    "jsonschema": "^1.4.0"
+    "jackd": "^2.1.2",
+    "jsonschema": "^1.4.1"
   },
   "devDependencies": {
     "chai": "*",
-    "eslint": "^7.32.0",
-    "eslint-watch": "^7.0.0",
+    "eslint": "^8.27.0",
+    "eslint-watch": "^8.0.0",
     "mocha": "*",
     "test-console": "^2.0.0"
   },
   "scripts": {
-    "eslint": "eslint src/**/*.js",
-    "watch": "esw --watch src/**/*.js",
+    "eslint": "eslint src/**/*.js test/**/*.js",
+    "watch": "esw --watch src/**/*.js test/**/*.js",
     "test": "mocha"
   },
   "publishConfig": {
