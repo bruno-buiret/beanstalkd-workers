@@ -1,6 +1,6 @@
 {
   "name": "@bruno-buiret/beanstalkd-workers",
-  "version": "1.0.0",
+  "version": "1.1",
   "description": "NodeJS workers for beanstalkd.",
   "keywords": [
     "beanstalkd",
@@ -26,8 +26,8 @@
     "test-console": "^2.0.0"
   },
   "scripts": {
-    "eslint": "eslint src/**/*.js test/**/*.js",
-    "watch": "esw --watch src/**/*.js test/**/*.js",
+    "eslint": "eslint src/**/*.js test/**/*.js examples/**/*.js",
+    "watch": "esw --watch src/**/*.js test/**/*.js examples/**/*.js",
     "test": "mocha"
   },
   "publishConfig": {

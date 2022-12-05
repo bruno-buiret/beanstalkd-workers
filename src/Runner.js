@@ -73,20 +73,20 @@ class Runner extends EventEmitter {
                     properties: {
                         host: {
                             type: 'string',
-                            minLength: 1
+                            minLength: 1,
                         },
                         port: {
                             type: 'integer',
                             minimum: 1,
                             maximum: 65535,
-                        }
-                    }
-                }
+                        },
+                    },
+                },
             },
             type: 'object',
             properties: {
                 beanstalk: {
-                    type: {'$ref': '#/definitions/beanstalk'}
+                    type: {'$ref': '#/definitions/beanstalk'},
                 },
                 workers: {
                     type: 'array',
@@ -94,16 +94,16 @@ class Runner extends EventEmitter {
                         type: 'object',
                         properties: {
                             beanstalk: {
-                                type: {'$ref': '#/definitions/beanstalk'}
+                                type: {'$ref': '#/definitions/beanstalk'},
                             },
                             tubes: {
                                 type: 'array',
                                 items: {
                                     type: 'string',
                                     minLength: 1,
-                                    pattern: '[a-zA-Z0-9+/;\\.$_\\(\\)][a-zA-Z0-9-+/;\\.$_\\(\\)]*'
+                                    pattern: '[a-zA-Z0-9+/;\\.$_\\(\\)][a-zA-Z0-9-+/;\\.$_\\(\\)]*',
                                 },
-                                minimum: 1
+                                minimum: 1,
                             },
                             handlers: {
                                 type: 'array',
@@ -113,19 +113,19 @@ class Runner extends EventEmitter {
                                     properties: {
                                         path: {
                                             type: 'string',
-                                            minLength: 1
-                                        }
+                                            minLength: 1,
+                                        },
                                     },
-                                    required: ['path']
+                                    required: ['path'],
                                 },
-                                minimum: 1
-                            }
+                                minimum: 1,
+                            },
                         },
-                        required: ['tubes', 'handlers']
-                    }
-                }
+                        required: ['tubes', 'handlers'],
+                    },
+                },
             },
-            required: ['workers']
+            required: ['workers'],
         });
 
         // Check configuration

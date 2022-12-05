@@ -13,23 +13,23 @@ const runner = new Runner(
     {
         beanstalk: {
             host: 'localhost',
-            port: 11300
+            port: 11300,
         },
         workers: [
             {
                 tubes: ['test_1', 'test_2'],
                 handlers: [
                     './NoopHandler.js',
-                    {path: './NoopHandler.js'}
-                ]
+                    {path: './NoopHandler.js'},
+                ],
             },
             {
                 tubes: ['test_3'],
                 handlers: [
                     './NoopHandler.js',
-                ]
-            }
-        ]
+                ],
+            },
+        ],
     },
     logger
 );
