@@ -21,14 +21,14 @@ producer
 
         do {
             await producer.use(tubes.random());
-            const id = await producer.put({
+            await producer.put({
                 type: 'book',
                 payload: {
-                    isbn: isbns.random()
-                }
+                    isbn: isbns.random(),
+                },
             });
             await wait(durations.random());
         }
-        while(true);
+        while(true); // eslint-disable-line no-constant-condition
     })
 ;

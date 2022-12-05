@@ -2,7 +2,7 @@
 const assert = require('chai').assert;
 const streams = Object.freeze({
     stdout: require('test-console').stdout,
-    stderr: require('test-console').stderr
+    stderr: require('test-console').stderr,
 });
 const {Logger, LOG_LEVELS} = require('../src/Logger');
 
@@ -55,7 +55,7 @@ describe('Logger', function() {
             const stream = logLevel >= LOG_LEVELS.NOTICE ? 'stderr' : 'stdout';
             const output = streams[stream].inspectSync(() => logger[method](logLevel, 'test'));
 
-            it('Logger.' + method + '() begin with the date, time and level', function() {
+            it('Logger.' + method + '() should begin with the date, time and level', function() {
                 assert.match(output[0], new RegExp('^\\[\\d{2}\\/\\d{2}\\/\\d{4}, \\d{2}:\\d{2}:\\d{2}\\]\\[' + method + '\\]'), 'Log should have matched pattern');
             });
         }

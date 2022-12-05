@@ -6,7 +6,7 @@ const LOG_LEVELS = Object.freeze({
     ERROR: 500,
     CRITICAL: 600,
     ALERT: 700,
-    EMERGENCY: 800
+    EMERGENCY: 800,
 });
 const LEVEL_NAMES = Object.freeze({
     [LOG_LEVELS.DEBUG]: 'debug',
@@ -16,7 +16,7 @@ const LEVEL_NAMES = Object.freeze({
     [LOG_LEVELS.ERROR]: 'error',
     [LOG_LEVELS.CRITICAL]: 'critical',
     [LOG_LEVELS.ALERT]: 'alert',
-    [LOG_LEVELS.EMERGENCY]: 'emergency'
+    [LOG_LEVELS.EMERGENCY]: 'emergency',
 });
 const LEVEL_METHODS = Object.freeze({
     [LOG_LEVELS.DEBUG]: 'debug', // === log()
@@ -26,7 +26,7 @@ const LEVEL_METHODS = Object.freeze({
     [LOG_LEVELS.ERROR]: 'error',
     [LOG_LEVELS.CRITICAL]: 'error',
     [LOG_LEVELS.ALERT]: 'error',
-    [LOG_LEVELS.EMERGENCY]: 'error'
+    [LOG_LEVELS.EMERGENCY]: 'error',
 });
 
 /**
@@ -46,7 +46,7 @@ class Logger {
         this.formatter = new Intl.DateTimeFormat('en-GB', {
             hour12: false,
             year: 'numeric', month: '2-digit', day: '2-digit',
-            hour: '2-digit', minute: '2-digit', second: '2-digit'
+            hour: '2-digit', minute: '2-digit', second: '2-digit',
         });
     }
 
