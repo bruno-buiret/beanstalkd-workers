@@ -1,6 +1,6 @@
 {
   "name": "@bruno-buiret/beanstalkd-workers",
-  "version": "1.1",
+  "version": "1.1.0",
   "description": "NodeJS workers for beanstalkd.",
   "keywords": [
     "beanstalkd",
